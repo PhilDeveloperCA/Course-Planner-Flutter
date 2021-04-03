@@ -15,7 +15,7 @@ class AssignmentArgs {
 
 // ignore: non_constant_identifier_names
 class CourseView extends StatefulWidget {
-  CourseScreenArgs course;
+  Course course;
   CourseView(this.course);
   _CourseViewState createState() {
     return _CourseViewState();
@@ -59,7 +59,7 @@ class _CourseViewState extends State<CourseView> {
             Container(
               padding: EdgeInsets.only(top: 18.0, bottom: 20.0),
               child: Text(
-                widget.course.course_name,
+                widget.course.name,
                 style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,
@@ -82,7 +82,7 @@ class _CourseViewState extends State<CourseView> {
             Container(
               padding: EdgeInsets.only(top: 18.0),
               child: Text(
-                widget.course.course_description,
+                widget.course.description,
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -159,7 +159,7 @@ class _CourseViewState extends State<CourseView> {
                             icon: Icon(Icons.details),
                             onPressed: () {
                               Navigator.pushNamed(
-                                  context, RouteNames.topic_details,
+                                  context, RouteNames.task_overview,
                                   arguments: assignment);
                             },
                             label: Text('Details'),

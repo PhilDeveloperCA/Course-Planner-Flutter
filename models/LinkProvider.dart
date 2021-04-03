@@ -10,6 +10,7 @@ class Link {
   Link(this.topic_id, this.name, this.description, this.url);
   Link.fromMap(Map<String, dynamic> linkMap) {
     this.id = linkMap['id'];
+    this.url = linkMap['url'];
     this.topic_id = linkMap['topic_id'];
     this.description = linkMap['description'];
     this.name = linkMap['name'];
@@ -21,6 +22,8 @@ class LinkProvider extends ChangeNotifier {
   int topic_id;
   LinkProvider(int topic_id) {
     this.topic_id = topic_id;
+    this.links = [];
+    fetchLinks();
   }
 
   fetchLinks() async {

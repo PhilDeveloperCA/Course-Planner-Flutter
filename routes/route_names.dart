@@ -12,4 +12,5 @@ class RouteNames {
   static const String topic_details = '/topic_details';
   static const String add_topic = '/add_topic';
   static const String link_details = '/link_details';
+  static const String add_link = '/add_link';
 }

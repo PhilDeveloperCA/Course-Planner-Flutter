@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:note_taker_app/db/db.dart';
 
+import 'CourseProvider.dart';
+
 class Topic {
   int id;
   String name;
@@ -12,6 +14,11 @@ class Topic {
     this.id = topicmap['id'];
     this.name = topicmap['name'];
     this.course_id = topicmap['course_id'];
+  }
+
+  Future<Course> getCourse() async {
+    Course course = await DatabaseHelper().getCourseById(this.course_id);
+    return course;
   }
 }
 

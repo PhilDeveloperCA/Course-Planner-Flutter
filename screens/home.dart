@@ -17,9 +17,7 @@ class _HomeState extends State<Home> {
   String course_setting = "All";
 
   bool CompletionFilter(bool completed) {
-    if (this.index == 0) {
-      return true;
-    }
+    if (this.index == 0) return true;
     if (this.index == 2) {
       return completed;
     } else
@@ -133,8 +131,7 @@ class CourseWidget extends StatelessWidget {
           label: Text('Details'),
           onPressed: () {
             Navigator.pushNamed(context, RouteNames.course_overview,
-                arguments: CourseScreenArgs(
-                    status.id, status.name, status.description));
+                arguments: status);
           },
         )
       ],

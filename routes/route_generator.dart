@@ -5,6 +5,7 @@ import 'package:note_taker_app/screens/assignment_form.dart';
 import 'package:note_taker_app/screens/assignment_view.dart';
 import 'package:note_taker_app/screens/course_screen.dart';
 import 'package:note_taker_app/screens/edit_course.dart';
+import 'package:note_taker_app/screens/link_form.dart';
 import 'package:note_taker_app/screens/topic_form.dart';
 import 'package:note_taker_app/screens/topic_screen.dart';
 import '../screens/home.dart';
@@ -41,6 +42,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => TopicForm(args));
       case RouteNames.link_details:
         return MaterialPageRoute(builder: (context) => CourseView(args));
+      case RouteNames.add_link:
+        return MaterialPageRoute(builder: (context) => AddLink(args));
       default:
         return MaterialPageRoute(builder: (context) => Home());
     }

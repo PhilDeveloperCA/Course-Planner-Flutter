@@ -22,6 +22,37 @@ class AssignmentView extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Assignment Details'),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.delete),
+              color: Colors.red[400],
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                      title: Text(
+                          'Are you Sure you want to Delete this assignment'),
+                      actions: <Widget>[
+                        FloatingActionButton(
+                          child: Text('No'),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        FloatingActionButton.extended(
+                          onPressed: () {
+                            AssignmentProvider.delete2(task.id);
+                            Navigator.pop(context);
+                            Navigator.pop(context);
+                          },
+                          label: Text('Yes'),
+                          icon: Icon(Icons.warning),
+                        )
+                      ]),
+                );
+              },
+            )
+          ],
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
