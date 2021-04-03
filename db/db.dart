@@ -99,6 +99,14 @@ class DatabaseHelper {
     return raw.map((mapcourse) => Course.fromMap(mapcourse)).toList();
   }
 
+  Future<Course> getCourseById(id) async {
+    Database db = await database;
+    List<Map<String, dynamic>> raw =
+        await db.query('courses', where: 'id = ?', whereArgs: [id]);
+    print(Course.fromMap(raw[0]));
+    return Course.fromMap(raw[0]);
+  }
+
   /*editCourseName(int id, String name) async {
     Database db = await database;
     await db.rawUpdate('UPDATE courses SET name = ? WHERE id = ?', [id, name]);
@@ -202,5 +210,6 @@ class DatabaseHelper {
         .query('topic_link', where: 'topic_id = ? ', whereArgs: [topic_id]);
     List<Link> links =
         linksmaplist.map((linkmap) => Link.fromMap(linkmap)).toList();
+    return links;
   }
 }

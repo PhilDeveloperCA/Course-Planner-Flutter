@@ -31,9 +31,6 @@ class Course {
     this.name = map['name'];
     this.description = map['description'];
     this.completed = map['completed'] == 1 ? true : false;
-    if (map['completed'] == true) {
-      print('Found One !!');
-    }
   }
 
   Map<String, dynamic> coursetoMap() {

@@ -26,6 +26,7 @@ class _AddAssignmentState extends State<AddAssignment> {
                 },
               ),
               TextField(
+                keyboardType: TextInputType.multiline,
                 onChanged: (value) {
                   setState(() {
                     widget.task.name;

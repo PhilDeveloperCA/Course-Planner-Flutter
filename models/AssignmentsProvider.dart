@@ -59,4 +59,8 @@ class AssignmentProvider extends ChangeNotifier {
     await DatabaseHelper().deleteTask(id);
     fetchAssignments();
   }
+
+  static delete2(int id) async {
+    await DatabaseHelper().deleteTask(id);
+  }
 }

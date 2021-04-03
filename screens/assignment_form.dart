@@ -67,6 +67,7 @@ class _AssignmentFormState extends State<AssignmentForm> {
             ),
             TextFormField(
               controller: _descriptionController,
+              keyboardType: TextInputType.multiline,
               validator: (value) {
                 if (value.length == 0)
                   return 'Enter Valid Text';
